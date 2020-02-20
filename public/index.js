@@ -29,7 +29,8 @@ google.charts.load('current', {'packages':['corechart']});
           }
         let dataArray = [['Дата', 'Значение']]
         let from = document.getElementById('from_year').value +'-'+document.getElementById('from_month').value + '-01'
-        let to = document.getElementById('to_year').value +'-'+document.getElementById('to_month').value + '-31'
+        let lastDay = new Date(document.getElementById('to_year').value, document.getElementById('to_month').value, 0)
+        let to = document.getElementById('to_year').value +'-'+document.getElementById('to_month').value + '-' + lastDay.getDate()
         let responce = await fetch('http://localhost:8080/api/rate?from=' + from + "&to=" +to, {
           method : 'GET'
         })
