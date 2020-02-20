@@ -24,7 +24,7 @@ google.charts.load('current', {'packages':['corechart']});
         if((document.getElementById('from_year').value > document.getElementById('to_year').value)
          || ((document.getElementById('from_year').value == document.getElementById('to_year').value)
           && (document.getElementById('from_month').value > document.getElementById('to_month').value))) {
-            alert('huynya')
+            alert('Начальная дата больше конечной!')
             return
           }
         let dataArray = [['Дата', 'Значение']]
